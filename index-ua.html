@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПРОТОКОЛ: ПАРОЛЬ | Калькулятор злому паролів 2026</title>
+    <meta name="description" content="Розрахуйте час злому WiFi-пароля. Brute Force та Dictionary Attack. Перевірка на витоки.">
+    <meta property="og:title" content="Калькулятор злому паролів 2026">
+    <meta property="og:description" content="Дізнайтеся, скільки будуть зламувати ваш WiFi-пароль">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Password Calculator 2026","applicationCategory":"SecurityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"}}</script>
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="controls">
+        <button class="control-btn" id="themeToggle" onclick="toggleTheme()">🌙 Тема</button>
+        <button class="control-btn" id="animToggle" onclick="toggleAnimation()">✨ Анімація</button>
+    </div>
+    <div class="container">
+        <header class="hero">
+            <h1>&lt;ВСЕ ПРО ПАРОЛІ /&gt;</h1>
+            <p>Пароль у віртуальному світі — це щось на зразок замка у світі реальному. Ми всі стикаємося з паролями при вході в Інтернет, використанні мереж, отриманні електронної пошти тощо. Природно, є люди, які хочуть отримати ваші паролі. Нижче наведено коротку інформацію про те, як вони це роблять і як ви можете захистити себе.</p>
+        </header>
+        <main>
+            <section class="real-checker">
+                <h2 style="color:var(--neon-cyan);margin-bottom:1rem">🔍 ПЕРЕВІРТЕ СВІЙ ПАРОЛЬ</h2>
+                <p style="margin-bottom:1rem;color:var(--text-dim)">Введіть ваш пароль, щоб дізнатися його реальну стійкість і перевірити наявність у базах витоків</p>
+                <input type="password" id="realPassword" placeholder="Введіть пароль для перевірки..." aria-label="Пароль для перевірки">
+                <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                <div class="strength-text" id="strengthText">Введіть пароль</div>
+                <div class="pwned-warning" id="pwnedWarning"></div>
+            </section>
+            <section class="popular-list">
+                <h3 style="color:var(--neon-red);margin-bottom:1rem">⚠️ ТОП-10 НАЙЧАСТІШИХ ПАРОЛІВ (2025)</h3>
+                <ol>
+                    <li><strong>123456</strong> — 23 млн використань</li>
+                    <li><strong>123456789</strong> — 18 млн</li>
+                    <li><strong>qwerty</strong> — 14 млн</li>
+                    <li><strong>password</strong> — 12 млн</li>
+                    <li><strong>111111</strong> — 9 млн</li>
+                    <li><strong>12345678</strong> — 8.5 млн</li>
+                    <li><strong>abc123</strong> — 7.8 млн</li>
+                    <li><strong>1234567</strong> — 7.2 млн</li>
+                    <li><strong>letmein</strong> — 6.5 млн</li>
+                    <li><strong>dragon</strong> — 6 млн</li>
+                </ol>
+            </section>
+            <section class="panel">
+                <h2>01. Математика та теорія злому</h2>
+                <p>Іноді в системі захисту виникає прогалина того чи іншого роду, яка дозволяє легко її зламати. Такою була система зберігання паролів в оригінальній Windows 95 (цю помилку було виправлено в OSR2, але аналогічні вразливості зустрічаються і в сучасних системах, включаючи Windows 11 та Windows Server 2022 при неправильному налаштуванні). Тим не менш, якщо система захисту, яку ви використовуєте, була спроектована правильно (див. <a href="psw3.asp">тут</a> про правильні способи перевірки паролів), єдиним способом злому залишається перебір усіх паролів.</p>
+                <p>Кількість варіантів пароля дорівнює <span class="highlight">N^M</span>, де N — кількість символів у наборі, а M — максимальна довжина пароля. Поділивши це число на швидкість пошуку, ми отримуємо T — час для повного пошуку.</p>
+                <p><strong style="color:var(--neon-red)">ВАЖЛИВО:</strong> Для злому WiFi-паролів (WPA2/WPA3) використовуються спеціалізовані алгоритми. Типова швидкість перебору на середньому ПК з хорошою відеокартою становить близько 300,000 паролів за секунду. Спеціалізовані ферми можуть досягати кількох мільйонів спроб за секунду.</p>
+                <table class="data-table">
+                    <caption style="margin-bottom:10px;color:var(--text-dim);font-size:.9rem">Час злому WiFi-пароля (WPA2/WPA3) при швидкості 300,000 паролів/сек</caption>
+                    <thead><tr><th>Довжина</th><th>26 (рядкові)</th><th>36 (+ цифри)</th><th>52 (регістр)</th><th>96 (всі символи)</th></tr></thead>
+                    <tbody>
+                        <tr><td>4</td><td>2 сек</td><td>6 сек</td><td>24 сек</td><td>5 хв</td></tr>
+                        <tr><td>5</td><td>40 сек</td><td>3 хв</td><td>21 хв</td><td>7.5 годин</td></tr>
+                        <tr><td>6</td><td>17 хв</td><td>2 години</td><td>18 годин</td><td>30 днів</td></tr>
+                        <tr><td>7</td><td>7.4 години</td><td>3 дні</td><td>40 днів</td><td>7.9 років</td></tr>
+                        <tr><td>8</td><td>8 днів</td><td>109 днів</td><td>5.6 років</td><td>762 роки</td></tr>
+                        <tr><td>9</td><td>209 днів</td><td>10.7 років</td><td>294 роки</td><td>73,170 років</td></tr>
+                        <tr><td>10</td><td>14.9 років</td><td>386 років</td><td>15,277 років</td><td>7 млн років</td></tr>
+                    </tbody>
+                </table>
+                <p>Додавання всього <strong>одного символу</strong> збільшує час злому в 26–96 разів. Це зброя користувача, якою неможливо знехтувати.</p>
+            </section>
+            <section class="panel">
+                <h2>02. Методи атак та словники</h2>
+                <p>Тим не менш, справи йдуть не так похмуро для хакерів. Річ у тім, що паролі придумують живі люди, а багато людей схожі один на одного. Хакери використовують частотні словники, що містять мільйони слів, включаючи назви корпорацій, фільми, торгові марки та професійні терміни (ASTIGMATISM, HAMILTONIAN, DISPERSION тощо). Навіть популярні модифікації на кшталт FILEZ вже враховані в сучасних словниках.</p>
+                <p>До речі, якщо ви розмовляєте іншою мовою, використовуйте слова з неї як паролі. Хакери використовують англійські частотні словники, тому пароль іншою мовою буде несподіваним.</p>
+                <p>Теоретично найкращим варіантом було б, щоб комп'ютер придумав для вас <a href="https://lastbit.com/Password-Generator/default.asp">випадковий пароль</a>, але це зазвичай неприйнятно. Наприклад, важко запам'ятати пароль 'zmg74u5p'. Користувачі схильні записувати такі паролі, що знижує безпеку. Тому або право вибору має бути залишене за користувачем, або система генерації має створювати «людяні» паролі.</p>
+            </section>
+            <section class="panel">
+                <h2>03. Просунуті методи</h2>
+                <p>Системні адміністратори застосовують метод складання пароля з двох слів, розділених символом '$', або слова і числа ('smart34'). Але хакер може комбінувати слова зі словника. Якщо словник містить N слів, знадобиться <span class="highlight">N*N*44/S</span> годин для перебору варіантів '&lt;слово1&gt;&lt;символ&gt;&lt;слово2&gt;'.</p>
+                <p>Пароль з урахуванням регістру збільшує варіанти в <span class="highlight">2^M</span> разів. При середній довжині 9 символів кількість варіантів зростає в 512 разів.</p>
+                <p>Іноді пароль зламується екзотичними способами: випадкове включення CAPS LOCK, використання одного пароля на різних ресурсах, збереження паролів на стікерах під клавіатурою.</p>
+            </section>
+            <section class="panel">
+                <h2>04. Brute Force та Smart Force</h2>
+                <p>Коли пароль неможливо вгадати, залишається «атака повним перебором» (brute force attack). Пошук може виконуватися у фоновому режимі, розподілятися між кількома комп'ютерами або навіть через Java-аплети (у минулому) або WebAssembly-модулі (зараз) на популярних сайтах, де десятки тисяч відвідувачів ненавмисно надають обчислювальну потужність.</p>
+                <p>Тим не менш, brute force не допоможе зламати 10-символьний пароль. Але чому розумні хлопці використовують «розумну силову атаку» (smart force attack)? Цей алгоритм намагається тільки «розумні» паролі. При швидкості 100 000 паролів за секунду для пароля тільки з літер потрібно 8 днів замість 45 років! Smart force працює тільки для паролів з літер (без цифр і спецсимволів).</p>
+                <p>Я хочу підкреслити сумний факт: час перевірки пароля не є критичним для системи. Якби Windows 11 витрачала півсекунди на перевірку, користувачі б не помітили, але це збільшило б час злому в мільйони разів. Достатньо використовувати повільні алгоритми на кшталт bcrypt або Argon2. Тим не менш, цим простим методом часто нехтують.</p>
+            </section>
+            <section class="panel">
+                <h2>05. Цінність пароля та рекомендації</h2>
+                <p>Наскільки цінний ваш пароль? Що станеться, якщо його зламають? Чи влаштує хакера дюжина комп'ютерів, що працюють тиждень? Відповідь «ні», якщо результат — доступ до вашого жорсткого диска з програмним мотлохом. І «чорт забирай, чому б і ні», якщо це ключ до вашого ощадного рахунку.</p>
+                <h3>Що робити?</h3>
+                <ol class="rec-list">
+                    <li><p>Використовуйте менеджери паролів (1Password, Bitwarden, KeePass). Генеруйте унікальні складні паролі для кожного ресурсу. Вам потрібно запам'ятати тільки один майстер-пароль.</p></li>
+                    <li><p>Робіть паролі досить довгими. Для сучасних систем мінімум — 12 символів. Для критично важливих даних — 16 і більше. Пам'ятайте, що деякі системи обмежують довжину пароля.</p></li>
+                    <li><p>Використовуйте різні символи. Комбінація на кшталт <i>I$am@ok!</i> (три коротких слова + спецсимволи + різний регістр) зламується на порядки довше, ніж <em>SmartPassword2024</em>.</p></li>
+                    <li><p>Пам'ятайте, що надійність системи визначається її найслабкішим компонентом. Ви можете створити 20-символьний пароль, але якщо система зберігає його у відкритому вигляді або використовує застаріле шифрування (наприклад, старі версії MS Office або ZIP без AES), він буде скомпрометований за частки секунди.</p></li>
+                </ol>
+            </section>
+            <section class="panel" style="border-color:var(--neon-green)">
+                <button class="calc-toggle-btn" onclick="toggleCalculator()"><span>[ ЗАПУСТИТИ КАЛЬКУЛЯТОР ЗЛОМУ ]</span></button>
+                <div class="calc-content" id="calcContent">
+                    <p style="margin-bottom:1rem">Калькулятор оптимізований для розрахунку часу злому WiFi-паролів (WPA2/WPA3). Оберіть режим атаки:</p>
+                    <div class="calc-tabs">
+                        <button class="calc-tab active" onclick="switchCalcMode('brute')">⚡ Brute Force (за довжиною)</button>
+                        <button class="calc-tab" onclick="switchCalcMode('dict')">📖 Dictionary Attack (за словником)</button>
+                    </div>
+                    <div class="calc-mode active" id="mode-brute">
+                        <p style="margin-bottom:1.5rem;color:var(--text-dim);font-size:.9rem">Розраховує час повного перебору всіх можливих комбінацій заданої довжини.</p>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Довжина пароля:</label><input type="text" id="len" value="8" maxlength="2"></div>
+                        </div>
+                        <label style="font-family:var(--font-mono);color:var(--text-dim);font-size:.9rem;display:block;margin-bottom:.5rem">Набір символів:</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item"><input type="checkbox" id="cslwr" checked> рядкові літери (a-z)</label>
+                            <label class="checkbox-item"><input type="checkbox" id="cssymb"> спецсимволи (!@#$)</label>
+                            <label class="checkbox-item"><input type="checkbox" id="csuppr"> прописні літери (A-Z)</label>
+                            <label class="checkbox-item"><input type="checkbox" id="csascii"> повний ASCII</label>
+                            <label class="checkbox-item" style="grid-column:span 2"><input type="checkbox" id="csdigits"> цифри (0-9)</label>
+                        </div>
+                    </div>
+                    <div class="calc-mode" id="mode-dict">
+                        <p style="margin-bottom:1.5rem;color:var(--text-dim);font-size:.9rem">Розраховує час перебору готового словника паролів (наприклад, rockyou.txt містить ~14 млн паролів, великі словники — до 100 млн і більше).</p>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Кількість паролів у словнику:</label><input type="text" id="dictSize" value="100,000,000"></div>
+                        </div>
+                    </div>
+                    <div class="form-grid" style="margin-top:1.5rem">
+                        <div class="form-group">
+                            <label>Швидкість перебору (паролів/сек):</label>
+                            <input type="text" id="speed" value="1,000,000">
+                        </div>
+                        <div class="form-group">
+                            <label>Алгоритм (автопідстановка швидкості для RTX 4060):</label>
+                            <select id="algorithm" onchange="updateSpeedByAlgorithm()" style="background:var(--bg-dark);border:1px solid #30363d;color:var(--neon-green);font-family:var(--font-mono);padding:10px;border-radius:4px">
+                                <option value="1000000" selected>WPA2/WPA3 PBKDF2 (WiFi)</option>
+                                <option value="60000000000">MD5</option>
+                                <option value="20000000000">SHA-256</option>
+                                <option value="20000">bcrypt</option>
+                                <option value="5000">Argon2</option>
+                                <option value="custom">Своя швидкість (не змінювати)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="doit()">РОЗРАХУВАТИ ЧАС ЗЛОМУ</button>
+                    <div class="result-box" id="resultBox">
+                        <div style="color:var(--text-dim);font-family:var(--font-mono);margin-bottom:.5rem" id="resultLabel">Атака займе до:</div>
+                        <div class="result-text" id="result2">0 секунд</div>
+                        <div style="color:var(--text-dim);font-size:.85rem;margin-top:10px;font-family:var(--font-mono)" id="resultExact"></div>
+                        <div class="action-buttons">
+                            <button class="action-btn" onclick="shareResult()">📤 Поділитися</button>
+                            <button class="action-btn" onclick="exportAsImage()">📷 Експорт PNG</button>
+                            <button class="action-btn" onclick="toggleHistory()">📜 Історія</button>
+                        </div>
+                    </div>
+                    <div class="history-panel" id="historyPanel">
+                        <h3 style="color:var(--neon-cyan);margin-bottom:1rem">Історія розрахунків</h3>
+                        <div id="historyList"></div>
+                    </div>
+                </div>
+            </section>
+            <div class="warning-box"><strong>ВАЖЛИВЕ ПОПЕРЕДЖЕННЯ:</strong> Калькулятор оцінює час тільки для атаки повним перебором. На практиці існують більш ефективні методи. Наприклад, документи Word або Excel, захищені паролем, можуть бути відновлені за допомогою методів Guaranteed Recovery або Express Recovery за розумний час.</div>
+        </main>
+        <footer style="text-align:center;padding:3rem 2rem;color:var(--text-dim);font-family:var(--font-mono);font-size:.8rem;border-top:1px solid rgba(48,54,61,.8);margin-top:2rem">
+            <p>SYSTEM STATUS: SECURE // KNOWLEDGE IS POWER</p>
+            <p style="margin-top:.5rem">&copy; 2026 Protocol Password. Всі права захищені.</p>
+        </footer>
+    </div>
+    <div class="modal" id="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal()">&times;</button><div id="modalBody"></div></div></div>
+    <div class="toast" id="toast"></div>
+    <script src="script-uk.js"></script>
+</body>
+</html>

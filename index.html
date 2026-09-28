@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const userLang = navigator.language || navigator.userLanguage; 
+            const langCode = userLang.toLowerCase();
+            if (langCode.startsWith('uk') || langCode === 'uk-ua') {
+                window.location.replace('index-uk.html');
+            } else if (langCode.startsWith('ru') || langCode === 'ru-ru' || langCode === 'ru-by' || langCode === 'ru-kz') {
+                window.location.replace('index-ru.html');
+            } else {
+                window.location.replace('index-en.html');
+            }
+        });
+    </script>
+    <style>
+        body { background: #05080a; color: #00ff41; font-family: monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    </style>
+</head>
+<body>
+    <p>Initializing protocol... Detecting language... <span id="dots">...</span></p>
+</body>
+</html>

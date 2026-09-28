@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOCOL: PASSWORD | All About Passwords 2026</title>
+    <meta name="description" content="Calculate WiFi password cracking time. Brute Force and Dictionary Attack. Breach check.">
+    <meta property="og:title" content="Password Cracking Calculator 2026">
+    <meta property="og:description" content="Find out how long it would take to crack your WiFi password">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Password Calculator 2026","applicationCategory":"SecurityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"}}</script>
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="controls">
+        <button class="control-btn" id="themeToggle" onclick="toggleTheme()">🌙 Theme</button>
+        <button class="control-btn" id="animToggle" onclick="toggleAnimation()">✨ Animation</button>
+    </div>
+    <div class="container">
+        <header class="hero">
+            <h1>&lt;ALL ABOUT PASSWORDS /&gt;</h1>
+            <p>A password in the virtual world is something like a lock in the world of reality. We all encounter passwords when entering the Internet, using networks, receiving e-mail etc. Naturally, there are people out there who want to get your passwords. Here is some brief information about how they do it and how you can protect yourself. At the end of this page are some practical advices on how to choose a reliable password.</p>
+        </header>
+        <main>
+            <section class="real-checker">
+                <h2 style="color:var(--neon-cyan);margin-bottom:1rem">🔍 CHECK YOUR PASSWORD</h2>
+                <p style="margin-bottom:1rem;color:var(--text-dim)">Enter your password to check its real strength and verify it against known breach databases</p>
+                <input type="password" id="realPassword" placeholder="Enter password to check..." aria-label="Password to check">
+                <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+                <div class="strength-text" id="strengthText">Enter a password</div>
+                <div class="pwned-warning" id="pwnedWarning"></div>
+            </section>
+            <section class="popular-list">
+                <h3 style="color:var(--neon-red);margin-bottom:1rem">⚠️ TOP 10 MOST COMMON PASSWORDS (2025)</h3>
+                <ol>
+                    <li><strong>123456</strong> — 23 million uses</li>
+                    <li><strong>123456789</strong> — 18 million</li>
+                    <li><strong>qwerty</strong> — 14 million</li>
+                    <li><strong>password</strong> — 12 million</li>
+                    <li><strong>111111</strong> — 9 million</li>
+                    <li><strong>12345678</strong> — 8.5 million</li>
+                    <li><strong>abc123</strong> — 7.8 million</li>
+                    <li><strong>1234567</strong> — 7.2 million</li>
+                    <li><strong>letmein</strong> — 6.5 million</li>
+                    <li><strong>dragon</strong> — 6 million</li>
+                </ol>
+            </section>
+            <section class="panel">
+                <h2>01. Math &amp; Hacking Theory</h2>
+                <p>Sometimes a protection system has a breach of some sort which lets breaking it easily. Such was the password storage system in the original Windows '95 (this error corrected in OSR2, though similar vulnerabilities still appear in modern systems including Windows 11 and Windows Server 2022 when misconfigured). Yet, if the protection system you use had been designed properly (see <a href="psw3.asp">here</a> about correct ways of password verification) the only remaining way of hacking is searching all passwords (although this search may be quite intelligent - read further about this). For a password search it is important to know how many passwords are possible and what is the search speed.</p>
+                <p>The quantity of password variants equals to <span class="highlight">N^M</span>, where N is the quantity of characters in a charset (i.e., the quantity of characters that may be virtually present in a password) and M is the maximum length of a password. By dividing this number by the speed of a search we obtain the T - the time for a complete search, that is, in the 'worst case' the time we have to wait to get a password. In the 'best case' the very first password will be the right one. The probability to find a password during the time of t equals to <span class="highlight">p=t/T</span>, for example, a probability to find the password during the half of time indicated equals to 50%.</p>
+                <p><strong style="color:var(--neon-red)">IMPORTANT:</strong> For cracking WiFi passwords (WPA2/WPA3), specialized algorithms are used. The typical cracking speed on an average PC with a decent GPU is around 300,000 passwords per second. Specialized farms can reach several million attempts per second.</p>
+                <table class="data-table">
+                    <caption style="margin-bottom:10px;color:var(--text-dim);font-size:.9rem">WiFi password (WPA2/WPA3) cracking time at 300,000 passwords/sec</caption>
+                    <thead><tr><th>Length</th><th>26 (lowercase)</th><th>36 (+ digits)</th><th>52 (case sensitive)</th><th>96 (all chars)</th></tr></thead>
+                    <tbody>
+                        <tr><td>4</td><td>2 sec</td><td>6 sec</td><td>24 sec</td><td>5 min</td></tr>
+                        <tr><td>5</td><td>40 sec</td><td>3 min</td><td>21 min</td><td>7.5 hours</td></tr>
+                        <tr><td>6</td><td>17 min</td><td>2 hours</td><td>18 hours</td><td>30 days</td></tr>
+                        <tr><td>7</td><td>7.4 hours</td><td>3 days</td><td>40 days</td><td>7.9 years</td></tr>
+                        <tr><td>8</td><td>8 days</td><td>109 days</td><td>5.6 years</td><td>762 years</td></tr>
+                        <tr><td>9</td><td>209 days</td><td>10.7 years</td><td>294 years</td><td>73,170 years</td></tr>
+                        <tr><td>10</td><td>14.9 years</td><td>386 years</td><td>15,277 years</td><td>7 million years</td></tr>
+                    </tbody>
+                </table>
+                <p><a href="pswcalc.asp"><b>This page</b></a> contains an online calculator which lets you calculate a time of a password search depending on specific conditions you enter.</p>
+                <p>A user choosing a password and a hacker trying to increase the search speed compete on very unequal grounds. Should this user increase the password by one character, the hacker would have to increase the search speed 26 times (in the optimal case when only letters from one register are being used). In the worst case the time would grow 96 times. It is evident that no program can be optimized in this way, except for the most flagrant situations.</p>
+            </section>
+            <section class="panel">
+                <h2>02. Attack Methods &amp; Dictionaries</h2>
+                <p>Nevertheless, things don't look so bleak for hackers. The point is that passwords are made up by living people, and many people are alike. Therefore people use some words more frequently than others. Hackers know these words. There exist frequency glossaries that list the most popular words. Good glossaries contain hundreds thousand words. Almost for sure, any word you can come up with is contained in such glossaries. Even if you take a professional term as a password, it can still be contained in a glossary (I have just looked up a dictionary for some terms, having remembered my physical education. ASTIGMATISM, HAMILTONIAN, DISPERSION, etc). Being original is the hardest thing in the world. Remember that a good frequency dictionary is not just a plain dictionary. A usual dictionary does not contain names of corporations, movie titles, trademarks etc. A good frequency dictionary is composed of actual passwords made up by people just like you. So, do not aspire to be special. You could try introducing an error into a chosen word, yet the most popular modifications like FILEZ still can be found in a dictionary.</p>
+                <p>By the way, if you speak another language (even if a little bit) use words out of it as passwords. Hackers use English frequency dictionaries in English-speaking countries. In non-English speaking countries two dictionaries are to be used, English dictionary (as an international one) and a dictionary of a corresponding language. A password from some other language would be unexpected (you should only try to avoid using international words that are common for many languages).</p>
+                <p>In theory, the best option would be to have a computer make up a <a href="https://lastbit.com/Password-Generator/default.asp">random password</a> for you, but this option is usually unacceptable. For example, it's hard to remember a password, such as 'zmg74u5p'. Having such password leads to inconveniences; users tend to forget such passwords and in order not to forget they write them down. Such notes may be lost and be obtained by a hacker. Some cases are known when complex passwords are written by users on reverse of their keyboards, which does not promote security in any way. Therefore, we have to acknowledge that either the right to choose a password should be left to the end user, or a computer-aided password-generation system must be intelligent and make up 'humane' passwords.</p>
+            </section>
+            <section class="panel">
+                <h2>03. Advanced &amp; Exotic Methods</h2>
+                <p>The aforementioned facts are known not only to hackers, but to system administrators also. As a mean to counter the usage of a dictionary the latter use such a method: a password is composed of two words separated by a character, for example, a '$' sign. Another way is using a word and a number, like 'smart34'. Such a password is definitely better than a single word. But is it much better? Possessing such a technique, a hacker might complicate the search procedure, that is - pick words out of a dictionary and combine them. If the dictionary contains N words and the search speed is S passwords per hour than it would take <span class="highlight">N*N*44/S</span> hours (44 = 128 - 32 - 26*2, the quantity of printable non-text ASCII characters) to try all of the variants of the following type: '&lt;word1&gt;&lt;character&gt;&lt;word2&gt;'. This means pretty much time. Using huge dictionaries consisting of hundreds thousand words becomes impossible. Here's an example: it would take two days to search at the speed of 100,000 terms a second with a dictionary of 20,000 words. In case if a password is a word with an added number the search time would be equal to 100*N/S, which is much lesser than in the previous case.</p>
+                <p>Let us consider a case sensitive password. Complete combination search using both upper- and lower-case would increase the quantity of variants by <span class="highlight">2^M</span> times (M is the password length). With the average length of a word in a dictionary equal to 9 characters, the quantity of variants grows 512 times. Nine characters is the actual average password length in a frequency dictionary. You may be surprised how come English words are so long, yet there are two reasons for it. Firstly, short one- two- and three-letter words are not included into dictionaries at all; such passwords can be easily found by a simple search. Secondly, many users follow the trend to use long passwords and complex two-word passwords.</p>
+                <p>Another method may be put to use when approximate spelling of a password is known. For example, a situation when a keyboard is set to CAPS LOCK when a password is being chosen is pretty frequent. As a result a user may think that the password consists of lower-case letters, although it actually is written in upper-case.</p>
+                <p>Sometimes a password may be cracked in yet another exotic way. Usually every person has one or more favorite passwords. Often the same password is used for several resources. Therefore, having obtained a password in one of the ways a hacker might try to use it with other resources.</p>
+            </section>
+            <section class="panel">
+                <h2>04. Brute Force &amp; Smart Force</h2>
+                <p>Let us now consider a case when a password cannot be guessed in any way. In this case we are left nothing to do but search all of the variants. This way of cracking is usually called a 'brute force attack'. It takes a great amount of resources to crack even a not very long password. The search may be performed in background which might allow using a computer otherwise. Intermediate variants may be saved to disk in order to enable continuing the search the next day. The search may be distributed among several computers which could lead to an increase in the search speed by the number of times that corresponds to the quantity of computers. Here's an exotic option: a search may be performed by a Java applet (in the past) or a WebAssembly module (nowadays) which is located on some very popular site and is controlled from this site. Dozens thousand visitors may be giving computation power of their computers to crack the password without even suspecting it.</p>
+                <p>Nevertheless, a brute force attack will not help you to break a 10-character password despite your finesse, even if all the letters of the password are in the same case. But why smart guys must use brute force? For the most part there are combinations like jkqmzwd which are totally senseless among billions and trillions of passwords being searched. I attended this problem some time ago. My purpose was creation of a search algorithm which would only attempt 'reasonable' passwords. I named this algorithm 'smart force attack' as opposed to 'brute force attack' methods. There is a separate page dedicated to this technology. Briefly, here are the results. Having the search speed of 100,000 passwords a second and a case insensitive password which only contains letters it takes only 8 days (for a complete search of variants with a non-zero probability) or 10 hours (excluding the low-probability options) instead of 45 years! Smart force attack only works for letters-only passwords (i.e., not containing any digits or special characters). Read more about smart-force method <a href="psw2.asp">here</a>.</p>
+                <p>I want to emphasize the following sad fact. In the vast majority of cases the time it takes to verify a password is not critical for the system. Namely, if Windows 11 spent half a second to verify a password, users would hardly even notice it. But if we consider this we see that it would take 20 hours to pick a correct password of three letters and 42 days for a four-letter one. It is so easy to implement! It is hard to make an algorithm faster than it is, yet it takes absolutely no effort to slow it down. It would be sufficient to use slow and/or multiply repeated algorithms like bcrypt or Argon2. Nevertheless, this simple and efficient method is often neglected.</p>
+            </section>
+            <section class="panel">
+                <h2>05. Password Value &amp; Recommendations</h2>
+                <p>Here's one more important issue. How valuable is your password? What if it gets cracked? A lot rides upon the answers to these questions, like what time of search may be considered acceptable and what computation power may be mobilized to accomplish the task. Would a dozen computers working for a week be acceptable for a hacker? The answer is a definite 'no', if their work results in getting access to your hard disk where different kinds of software junk are stored. And the answer is 'heck why not' if the end result is the key to your savings account.</p>
+                <h3>What to do?</h3>
+                <ol class="rec-list">
+                    <li><p>Firstly, use <a href="https://web.archive.org/web/20251028020031/http://animabilis.com/">password organizers</a> (1Password, Bitwarden, KeePass). A good organizer will automatically generate different reliable passwords for all of your resources. You'll only have to come up with and remember one master password. Thus, you are going to ease your life and improve the security. Unfortunately, I do not take on a task of recommending you a good password organizer. The reason is that I don't use them and generally do not follow my own recommendations. Hope you'll be more careful than I. :-)</p></li>
+                    <li><p>Make your passwords long enough. For a well-built security system four characters should be enough, for Windows at least nine is needed. If you are not sure, prepare for worst and use passwords from twelve characters and longer. Use even longer passwords to protect the most valuable information. Somewhere at the level of the characters there is a limit above which there is no sense to increase the length of the password. Keep in your mind that many systems will limit the length of your password to N characters. In this case all of your efforts may be vain.</p></li>
+                    <li><p>Use different characters. A mark which separates two words seems not to be enough anymore. It is a good idea to use three possibly even shorter words, not just two of them. <i>I$am@ok!</i> is a really good password, and a very simple, at that. Do not use a single word as a password use at least two! Use more non-alphabetic characters, and use both cases if the password system is case-sensitive.</p></li>
+                    <li><p>Remember that the reliability of a system is defined by its weakest component. You may choose the most reliable password out of 20 characters, but if you are going to use it with older versions of MS Office or ZIP files without AES encryption, it's going to be cracked within a fraction of a second.</p></li>
+                </ol>
+                <p style="margin-top:2rem">Read more about password recovery method <a href="psw2.asp"><strong>here</strong></a>.</p>
+            </section>
+            <section class="panel" style="border-color:var(--neon-green)">
+                <button class="calc-toggle-btn" onclick="toggleCalculator()"><span>[ LAUNCH HACKING CALCULATOR ]</span></button>
+                <div class="calc-content" id="calcContent">
+                    <p style="margin-bottom:1rem">Calculator is optimized for WiFi password (WPA2/WPA3) cracking time estimation. Select attack mode:</p>
+                    <div class="calc-tabs">
+                        <button class="calc-tab active" onclick="switchCalcMode('brute')">⚡ Brute Force (by length)</button>
+                        <button class="calc-tab" onclick="switchCalcMode('dict')">📖 Dictionary Attack (by wordlist)</button>
+                    </div>
+                    <div class="calc-mode active" id="mode-brute">
+                        <p style="margin-bottom:1.5rem;color:var(--text-dim);font-size:.9rem">Calculates time to brute-force all possible combinations of given length.</p>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Password length:</label><input type="text" id="len" value="8" maxlength="2"></div>
+                        </div>
+                        <label style="font-family:var(--font-mono);color:var(--text-dim);font-size:.9rem;display:block;margin-bottom:.5rem">Charset:</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item"><input type="checkbox" id="cslwr" checked> chars in lower case (a-z)</label>
+                            <label class="checkbox-item"><input type="checkbox" id="cssymb"> common punctuation (!@#$)</label>
+                            <label class="checkbox-item"><input type="checkbox" id="csuppr"> chars in upper case (A-Z)</label>
+                            <label class="checkbox-item"><input type="checkbox" id="csascii"> full ASCII</label>
+                            <label class="checkbox-item" style="grid-column:span 2"><input type="checkbox" id="csdigits"> digits (0-9)</label>
+                        </div>
+                    </div>
+                    <div class="calc-mode" id="mode-dict">
+                        <p style="margin-bottom:1.5rem;color:var(--text-dim);font-size:.9rem">Calculates time to go through a ready password wordlist (e.g., rockyou.txt contains ~14M passwords, large wordlists — up to 100M and more).</p>
+                        <div class="form-grid">
+                            <div class="form-group"><label>Passwords in dictionary:</label><input type="text" id="dictSize" value="100,000,000"></div>
+                        </div>
+                    </div>
+                    <div class="form-grid" style="margin-top:1.5rem">
+                        <div class="form-group">
+                            <label>Cracking speed (passwords/sec):</label>
+                            <input type="text" id="speed" value="1,000,000">
+                        </div>
+                        <div class="form-group">
+                            <label>Hash algorithm (auto-fills speed for RTX 4060):</label>
+                            <select id="algorithm" onchange="updateSpeedByAlgorithm()" style="background:var(--bg-dark);border:1px solid #30363d;color:var(--neon-green);font-family:var(--font-mono);padding:10px;border-radius:4px">
+                                <option value="1000000" selected>WPA2/WPA3 PBKDF2 (WiFi) </option>
+                                <option value="60000000000">MD5 </option>
+                                <option value="20000000000">SHA-256 </option>
+                                <option value="20000">bcrypt</option>
+                                <option value="5000">Argon2</option>
+                                <option value="custom">Custom speed (don't change)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="doit()">CALCULATE!</button>
+                    <div class="result-box" id="resultBox">
+                        <div style="color:var(--text-dim);font-family:var(--font-mono);margin-bottom:.5rem" id="resultLabel">Attack will take up to:</div>
+                        <div class="result-text" id="result2">0 seconds</div>
+                        <div style="color:var(--text-dim);font-size:.85rem;margin-top:10px;font-family:var(--font-mono)" id="resultExact"></div>
+                        <div class="action-buttons">
+                            <button class="action-btn" onclick="shareResult()">📤 Share</button>
+                            <button class="action-btn" onclick="exportAsImage()">📷 Export PNG</button>
+                            <button class="action-btn" onclick="toggleHistory()">📜 History</button>
+                        </div>
+                    </div>
+                    <div class="history-panel" id="historyPanel">
+                        <h3 style="color:var(--neon-cyan);margin-bottom:1rem">Calculation History</h3>
+                        <div id="historyList"></div>
+                    </div>
+                </div>
+            </section>
+            <div class="warning-box"><strong>IMPORTANT NOTE: </strong>Password Calculator estimates recovery time for <strong>Brute-force attack</strong> only. Brute-force attack is the worst case, sometimes other more effective recovery methods are available. For example any password-protected Word or Excel document could be recovered using Guaranteed Recovery or Express Recovery within a reasonable time frame.</div>
+        </main>
+        <footer style="text-align:center;padding:3rem 2rem;color:var(--text-dim);font-family:var(--font-mono);font-size:.8rem;border-top:1px solid rgba(48,54,61,.8);margin-top:2rem">
+            <p>SYSTEM STATUS: SECURE // KNOWLEDGE IS POWER</p>
+            <p style="margin-top:.5rem">&copy; 2026 Protocol Password. All rights reserved.</p>
+        </footer>
+    </div>
+    <div class="modal" id="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal()">&times;</button><div id="modalBody"></div></div></div>
+    <div class="toast" id="toast"></div>
+    <script src="script-en.js"></script>
+</body>
+</html>
